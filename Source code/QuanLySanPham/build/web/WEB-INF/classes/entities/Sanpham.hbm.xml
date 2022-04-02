@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 5, 2017 11:37:12 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="entities.Sanpham" table="sanpham" catalog="qlsp" optimistic-lock="version">
+        <id name="maSanPham" type="string">
+            <column name="MaSanPham" length="45" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="loaisanpham" class="entities.Loaisanpham" fetch="select">
+            <column name="IDLoaiSanPham" />
+        </many-to-one>
+        <property name="tenSanPham" type="string">
+            <column name="TenSanPham" length="45" />
+        </property>
+        <property name="gia" type="string">
+            <column name="Gia" length="45" />
+        </property>
+        <property name="soLuongTonKho" type="java.lang.Integer">
+            <column name="SoLuongTonKho" />
+        </property>
+    </class>
+</hibernate-mapping>
